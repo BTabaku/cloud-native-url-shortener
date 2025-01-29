@@ -3,6 +3,7 @@
   <component name="ProjectModuleManager">
     <modules>
       <module fileurl="file://$PROJECT_DIR$/.idea/cloud-native-url-shortener.iml" filepath="$PROJECT_DIR$/.idea/cloud-native-url-shortener.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/cloud-native-url-shortener.main.iml" filepath="$PROJECT_DIR$/.idea/modules/cloud-native-url-shortener.main.iml" />
     </modules>
   </component>
 </project>

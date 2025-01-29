@@ -83,6 +83,13 @@ This project includes **GitHub Actions** to automate:
 - ✅ Pushing to Docker Hub
 - ✅ Deploying to Kubernetes
 
+## database setup
+
+```sh
+docker run --name url_shortener_db -e POSTGRES_USER=ubot202 -e POSTGRES_PASSWORD=ubot202 -e POSTGRES_DB=url_shortener_db -p 5432:5432 -d postgres
+```
+
+
 ## 📈 Monitoring & Logging
 - **Metrics** → **Prometheus & Grafana** for performance monitoring.
 - **Logging** → **ELK Stack** (Elasticsearch, Logstash, Kibana) for centralized logs.

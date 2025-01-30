@@ -1,7 +1,3 @@
-Here's a streamlined, professional README with a focus on clarity and essential information. I'll also restructure the project based on Spring Boot best practices:
-
----
-
 # Cloud-Native URL Shortener with Analytics
 
 [![CI/CD](https://github.com/BTabaku/cloud-native-url-shortener/actions/workflows/ci-cd.yml/badge.svg)](https://github.com/BTabaku/cloud-native-url-shortener/actions)
@@ -12,7 +8,7 @@ A production-ready URL shortener service with analytics capabilities, designed f
 
 - **URL Shortening**: Create short aliases for long URLs
 - **Analytics Dashboard**: Track clicks, geographic data, and device information
-- **Cloud Native**: Kubernetes-ready with Helm charts
+- **Cloud Native**: Docker-ready
 - **Monitoring**: Integrated Prometheus metrics and Grafana dashboards
 - **Security**: RBAC, rate limiting, and HTTPS support
 
@@ -20,7 +16,7 @@ A production-ready URL shortener service with analytics capabilities, designed f
 
 - **Backend**: Spring Boot 3, Spring Data JPA
 - **Database**: PostgreSQL (persistence), Redis (caching)
-- **Infrastructure**: Docker, Kubernetes, Helm
+- **Infrastructure**: Docker
 - **Monitoring**: Prometheus, Grafana, OpenTelemetry
 - **CI/CD**: GitHub Actions, Docker Hub
 
@@ -53,10 +49,6 @@ cloud-native-url-shortener/
 ├── settings.gradle
 ├── README.md
 ├── docker-compose.yml
-├── helm/                   # Kubernetes Helm charts
-│   ├── Chart.yaml
-│   ├── values.yaml
-│   └── templates/
 └── src/
     ├── main/
     │   ├── java/com/urlshortener/
@@ -91,14 +83,18 @@ cloud-native-url-shortener/
 
 ## Deployment
 
-### Kubernetes (DigitalOcean)
+### Docker
+
 ```bash
-# Deploy with Helm
-helm install url-shortener ./helm -n production
+# Build Docker image
+docker build -t url-shortener .
+
+# Run Docker container
+docker run -d -p 8080:8080 --name url-shortener url-shortener
 ```
 
 ### Environment Variables
-Configure via `application.yml` or Kubernetes secrets:
+Configure via `application.yml` or Docker environment variables:
 
 ```yaml
 spring:
@@ -138,32 +134,30 @@ Distributed under the MIT License. See `LICENSE` for details.
 
 ### Key Improvements:
 1. **Simplified Structure**:
-    - Removed redundant technical details
-    - Grouped related information under clear sections
-    - Added badges for quick status overview
+   - Removed redundant technical details
+   - Grouped related information under clear sections
+   - Added badges for quick status overview
 
 2. **Project Architecture**:
-    - Layered architecture following DDD principles
-    - Clear separation of concerns (api/application/domain/infrastructure)
-    - Proper configuration management
-    - Flyway for database migrations
+   - Layered architecture following DDD principles
+   - Clear separation of concerns (api/application/domain/infrastructure)
+   - Proper configuration management
+   - Flyway for database migrations
 
 3. **Professional Formatting**:
-    - Consistent markdown styling
-    - Reduced emoji usage
-    - Clear hierarchy with proper spacing
-    - Collapsible sections for complex details
+   - Consistent markdown styling
+   - Reduced emoji usage
+   - Clear hierarchy with proper spacing
+   - Collapsible sections for complex details
 
 4. **Actionable Documentation**:
-    - Quick start section for immediate setup
-    - Environment variables template
-    - API endpoint summary table
-    - Helm chart deployment instructions
+   - Quick start section for immediate setup
+   - Environment variables template
+   - API endpoint summary table
+   - Docker deployment instructions
 
 5. **Maintainability Focus**:
-    - Standardized package structure
-    - Separate infrastructure configuration
-    - CI/CD integration ready
-    - Monitoring documentation
-
-Would you like me to provide specific implementation details for any of these components?
+   - Standardized package structure
+   - Separate infrastructure configuration
+   - CI/CD integration ready
+   - Monitoring documentation

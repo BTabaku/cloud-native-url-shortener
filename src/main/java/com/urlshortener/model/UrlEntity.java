@@ -1,4 +1,4 @@
-package com.example.cloudnativeurlshortener.model;
+package com.urlshortener.model;
 
 
 import jakarta.persistence.*;

@@ -49,7 +49,7 @@ A production-ready URL shortener service with analytics capabilities, designed f
 
 3. Build and run the application:
    ```bash
-   ./mvnw spring-boot:run
+   ./gradlew bootRun
    ```
 
 4. Access the API at `http://localhost:8080`.
@@ -70,36 +70,44 @@ cloud-native-url-shortener/
 └── src/
     ├── main/
     │   ├── java/com/urlshortener/
-    │   │   ├── Application.java              # Main class
-    │   │   ├── config/                       # Configuration classes
-    │   │   ├── controller/                   # REST Controllers
-    │   │   ├── service/                      # Business logic
-    │   │   ├── repository/                   # Data access layer
-    │   │   ├── model/                        # Domain models
-    │   │   ├── dto/                          # Data Transfer Objects
-    │   │   ├── exception/                    # Custom exceptions
-    │   │   └── util/                         # Utility classes
+    │   │   ├── CloudNativeUrlShortenerApplication.java  # Main class
+    │   │   ├── config/                                  # Configuration classes
+    │   │   ├── controller/                              # REST Controllers
+    │   │   ├── service/                                 # Business logic
+    │   │   ├── repository/                              # Data access layer
+    │   │   ├── model/                                   # Domain models
+    │   │   ├── dto/                                     # Data Transfer Objects
+    │   │   ├── exception/                               # Custom exceptions
+    │   │   └── util/                                    # Utility classes
     │   └── resources/
-    │       ├── application.yml               # Main config
-    │       ├── db/migration/                 # Flyway migrations
-    │       └── static/docs/                  # API documentation
+    │       ├── application.yml                          # Main config
+    │       ├── db/migration/                            # Flyway migrations
+    │       └── static/docs/                             # API documentation
     └── test/
         └── java/com/urlshortener/
-            ├── unit/                        # Unit tests
-            └── integration/                 # Integration tests
+            ├── unit/                                    # Unit tests
+            └── integration/                             # Integration tests
 ```
 
 ---
 
 ## 📄 API Documentation
 
-**Base URL**: `http://localhost:8080/api/v1`
+**Base URL**: `http://localhost:8080/api`
 
 | Endpoint       | Method | Description                     |
 |----------------|--------|---------------------------------|
 | `/shorten`     | POST   | Create short URL                |
 | `/{shortCode}` | GET    | Redirect to original URL        |
 | `/analytics`   | GET    | Get click statistics            |
+
+### Testing with `curl`
+
+To test the `shortenURL` endpoint using `curl`, use the following command:
+
+```sh
+curl -X POST -H "Content-Type: application/json" -d '"http://example.com"' http://localhost:8080/api/shorten
+```
 
 ---
 
@@ -150,27 +158,9 @@ We welcome contributions! Here’s how to get started:
 
 ---
 
-## 📜 License
-
-This project is licensed under the **MIT License**. See [LICENSE](LICENSE) for details.
-
----
-
 ## 📬 Contact
 
 👤 **Baftjar Tabaku**
 - ✉️ **Email**: [bafti@btabaku.info](mailto:bafti@btabaku.info)
 - 🌐 **Website**: [btabaku.info](https://btabaku.info/)
 - 💻 **GitHub**: [@btabaku](https://github.com/BTabaku)
-
----
-
-### Key Improvements:
-1. **Badges**: Added a license badge for better visibility.
-2. **Formatting**: Improved spacing and readability with clear section dividers (`---`).
-3. **API Documentation**: Added the base URL for clarity.
-4. **Deployment Instructions**: Simplified Docker commands and added a note about environment variables.
-5. **Contact Section**: Added a more professional and detailed contact section.
-6. **Consistency**: Ensured consistent capitalization and punctuation throughout.
-
-This version is now ready for use! Let me know if you’d like further refinements or additional sections. 🚀

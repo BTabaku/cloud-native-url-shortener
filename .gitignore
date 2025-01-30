@@ -7,11 +7,25 @@ out/
 # Gradle
 .gradle/
 build/
-+ gradle-app.setup  # If exists
+gradle-app.setup
+
+# Logs
+*.log
+
+# Temporary files
+*.tmp
+*.temp
+
+# OS generated files
+.DS_Store
+Thumbs.db
+
+# Java
+*.class
+*.jar
+*.war
+*.ear
 
 # Spring Boot
 spring.log
-+ HELP.md  # Explicitly ignore (you mentioned removing it)
-
-# Flyway
-- flyway.conf  # Remove this line (your config is in build.gradle)
+HELP.md

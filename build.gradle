@@ -41,7 +41,7 @@ test {
 }
 
 flyway {
-    url = 'jdbc:postgresql://localhost:5432/url_shortener'
+    url = 'jdbc:postgresql://localhost:5432/url_shortener_db'
     user = 'ubot202'
     password = 'ubot202'
 }

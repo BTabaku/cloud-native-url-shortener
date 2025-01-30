@@ -1,6 +1,6 @@
-package com.example.cloudnativeurlshortener.repository;
+package com.urlshortener.repository;
 
-import com.example.cloudnativeurlshortener.model.UrlEntity;
+import com.urlshortener.model.UrlEntity;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 

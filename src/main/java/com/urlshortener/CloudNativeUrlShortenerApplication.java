@@ -11,7 +11,6 @@ public class CloudNativeUrlShortenerApplication {
 
         System.out.println("Hello World");
 
-
     }
 
 }
